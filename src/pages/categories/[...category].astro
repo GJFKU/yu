@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  const categories = [...new Set(articles.map(a => a.data.category))];
+  return categories.map(category => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const articles = await getCollection('articles', ({ data }) => !data.draft && data.category === category);
+const sortedArticles = articles.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<Layout title={`${category}推荐`} description={`精选${category}评测与推荐`}>
+  <nav class="text-sm text-gray-400 mb-6">
+    <a href="/" class="hover:text-blue-600">首页</a>
+    <span class="mx-2">/</span>
+    <span class="text-gray-600">{category}</span>
+  </nav>
+
+  <h1>🏷️ {category}</h1>
+  <p class="text-gray-500 mb-8">以下就是关于 {category} 的精选评测文章。</p>
+
+  {sortedArticles.length > 0 ? (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedArticles.map(article => <ArticleCard article={article} />)}
+    </div>
+  ) : (
+    <div class="text-center py-16 text-gray-400">
+      <p class="text-5xl mb-4">📭</p>
+      <p>该分类暂无文章</p>
+    </div>
+  )}
+</Layout>

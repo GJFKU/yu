@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* 基础样式 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  a {
+    @apply text-blue-600 hover:text-blue-800 transition-colors;
+  }
+  h1 {
+    @apply text-3xl font-bold mb-4 text-gray-900;
+  }
+  h2 {
+    @apply text-2xl font-semibold mb-3 mt-8 text-gray-800;
+  }
+  h3 {
+    @apply text-xl font-semibold mb-2 mt-6 text-gray-800;
+  }
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+  ul, ol {
+    @apply mb-4 pl-6;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  li {
+    @apply mb-1;
+  }
+  blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4;
+  }
+  table {
+    @apply w-full border-collapse mb-6;
+  }
+  th {
+    @apply bg-gray-100 text-left px-4 py-3 font-semibold border-b-2 border-gray-200;
+  }
+  td {
+    @apply px-4 py-3 border-b border-gray-200;
+  }
+  img {
+    @apply rounded-lg max-w-full h-auto my-4;
+  }
+}

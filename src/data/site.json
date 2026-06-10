@@ -1,0 +1,35 @@
+{
+  "categories": [
+    "蓝牙耳机",
+    "降噪耳机",
+    "头戴式耳机",
+    "游戏耳机",
+    "运动耳机"
+  ],
+  "products": [
+    {
+      "name": "Apple AirPods Pro 2",
+      "category": "蓝牙耳机",
+      "price": "¥1,899",
+      "rating": "4.8",
+      "jdypLink": "https://union.jd.com/xxx",
+      "tmLink": "https://ulink.taobao.com/xxx"
+    },
+    {
+      "name": "Sony WH-1000XM5",
+      "category": "降噪耳机",
+      "price": "¥2,499",
+      "rating": "4.7",
+      "jdypLink": "https://union.jd.com/xxx",
+      "tmLink": "https://ulink.taobao.com/xxx"
+    },
+    {
+      "name": "小米 Buds 5 Pro",
+      "category": "蓝牙耳机",
+      "price": "¥999",
+      "rating": "4.5",
+      "jdypLink": "https://union.jd.com/xxx",
+      "tmLink": "https://ulink.taobao.com/xxx"
+    }
+  ]
+}

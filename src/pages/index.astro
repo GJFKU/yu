@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => !data.draft);
+const latestArticles = articles.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const featuredArticles = latestArticles.slice(0, 6);
+---
+
+<Layout title="耳机评测站" description="专业的蓝牙耳机、头戴式耳机、降噪耳机评测与推荐">
+  <!-- Hero -->
+  <section class="text-center py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      🎧 帮你找到 <span class="text-blue-600">最好的耳机</span>
+    </h1>
+    <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+      真实的评测、客观的对比、靠谱的推荐。不踩坑，买对不买贵。
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a
+        href="/categories/蓝牙耳机"
+        class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors font-medium"
+      >
+        蓝牙耳机推荐
+      </a>
+      <a
+        href="/categories/降噪耳机"
+        class="bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors font-medium"
+      >
+        降噪耳机推荐
+      </a>
+      <a
+        href="/categories/头戴式耳机"
+        class="bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors font-medium"
+      >
+        头戴式推荐
+      </a>
+    </div>
+  </section>
+
+  <!-- 分类快速入口 -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+    <a href="/categories/蓝牙耳机" class="block bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-md transition-shadow no-underline">
+      <span class="text-3xl">🎵</span>
+      <h3 class="text-lg font-semibold text-gray-900 mt-2 mb-1">真无线蓝牙耳机</h3>
+      <p class="text-sm text-gray-500">AirPods、小米、华为、三星…全品类对比</p>
+    </a>
+    <a href="/categories/降噪耳机" class="block bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 hover:shadow-md transition-shadow no-underline">
+      <span class="text-3xl">🔇</span>
+      <h3 class="text-lg font-semibold text-gray-900 mt-2 mb-1">降噪耳机</h3>
+      <p class="text-sm text-gray-500">主动降噪效果实测，地铁飞机场景推荐</p>
+    </a>
+    <a href="/categories/头戴式耳机" class="block bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-md transition-shadow no-underline">
+      <span class="text-3xl">🎧</span>
+      <h3 class="text-lg font-semibold text-gray-900 mt-2 mb-1">头戴式耳机</h3>
+      <p class="text-sm text-gray-500">在家办公、游戏、HiFi 听歌各场景推荐</p>
+    </a>
+  </section>
+
+  <!-- 最新文章 -->
+  <section>
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">📝 最新评测</h2>
+      <a href="/blog" class="text-sm text-blue-600 hover:text-blue-800">查看全部 →</a>
+    </div>
+    {featuredArticles.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredArticles.map(article => <ArticleCard article={article} />)}
+      </div>
+    ) : (
+      <div class="text-center py-12 text-gray-400 bg-white rounded-xl border border-dashed border-gray-200">
+        <p class="text-4xl mb-3">📝</p>
+        <p>评测文章正在撰写中，马上就来！</p>
+      </div>
+    )}
+  </section>
+</Layout>

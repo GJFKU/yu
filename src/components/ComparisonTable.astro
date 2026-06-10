@@ -1,0 +1,61 @@
+---
+export interface ProductRow {
+  name: string;
+  price: string;
+  rating: string;
+  battery: string;
+  noiseCancelling: string;
+  waterproof: string;
+  link?: string;
+}
+
+export interface Props {
+  title: string;
+  products: ProductRow[];
+}
+
+const { title, products } = Astro.props;
+---
+
+<div class="overflow-x-auto my-6">
+  <h3 class="text-lg font-semibold mb-3">{title}</h3>
+  <table class="w-full border-collapse bg-white rounded-xl shadow-sm">
+    <thead>
+      <tr class="bg-gray-50 border-b-2 border-gray-200">
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">产品</th>
+        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">价格</th>
+        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700">评分</th>
+        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700 hidden sm:table-cell">续航</th>
+        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700 hidden sm:table-cell">降噪</th>
+        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700 hidden md:table-cell">防水</th>
+        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {products.map((p, i) => (
+        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+          <td class="px-4 py-3 text-sm font-medium">{p.name}</td>
+          <td class="px-4 py-3 text-sm text-red-600 font-semibold">{p.price}</td>
+          <td class="px-4 py-3 text-center text-sm">{p.rating}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-500 hidden sm:table-cell">{p.battery}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-500 hidden sm:table-cell">{p.noiseCancelling}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-500 hidden md:table-cell">{p.waterproof}</td>
+          <td class="px-4 py-3 text-center">
+            {p.link ? (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="nofollow sponsored"
+                class="inline-block bg-red-500 text-white text-xs px-3 py-1.5 rounded-md hover:bg-red-600 transition-colors"
+              >
+                查看
+              </a>
+            ) : (
+              <span class="text-xs text-gray-300">-</span>
+            )}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

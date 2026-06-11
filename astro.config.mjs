@@ -5,7 +5,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://your-site.pages.dev',
+  site: 'https://earbuds-review.pages.dev',
   vite: {
     plugins: [tailwindcss()],
   },

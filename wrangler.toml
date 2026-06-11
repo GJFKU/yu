@@ -1,6 +1,3 @@
 name = "earbuds-review"
 compatibility_date = "2026-06-11"
 pages_build_output_dir = "dist"
-
-[env.production]
-account_id = "3402daeab80cd7951bdafea3a9c0217f"

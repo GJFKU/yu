@@ -1,46 +1,65 @@
-# Astro Starter Kit: Basics
+# 🎧 耳机评测站
 
-```sh
-npm create astro@latest -- --template basics
+蓝牙耳机、头戴式耳机、降噪耳机评测与推荐网站。
+
+**站点：** https://earbuds-review.pages.dev
+
+## 技术栈
+
+- **框架：** [Astro](https://astro.build) v6 (静态站点)
+- **样式：** [Tailwind CSS](https://tailwindcss.com) v4
+- **内容：** MDX
+- **部署：** [Cloudflare Pages](https://pages.cloudflare.com)
+- **CI/CD：** GitHub Actions（推送到 `master` 自动部署）
+
+## 本地开发
+
+```bash
+npm install        # 安装依赖
+npm run dev        # 启动本地服务 http://localhost:4321
+npm run build      # 构建到 dist/
+npm run preview    # 本地预览构建结果
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 部署流程
 
-## 🚀 Project Structure
+推送到 GitHub `master` 分支后自动触发部署：
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+git add .
+git commit -m "新文章"
+git push
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+CI 自动执行：`npm ci` → `npm run build` → `wrangler pages deploy`
 
-## 🧞 Commands
+## 项目结构
 
-All commands are run from the root of the project, from a terminal:
+```
+src/
+├── assets/            # 静态资源
+├── components/        # Astro 组件
+├── content/           # MDX 文章
+├── data/              # 数据文件
+├── layouts/           # 布局模板
+├── pages/             # 页面路由
+├── styles/            # 全局样式
+└── content.config.ts  # 内容集合配置
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## SEO
 
-## 👀 Want to learn more?
+- ✅ Sitemap: `https://earbuds-review.pages.dev/sitemap-index.xml`
+- ✅ Google Search Console 已验证
+- ✅ 结构化语义标签
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 环境变量
+
+| 变量 | 说明 |
+|------|------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API 令牌（GitHub Secret） |
+| `CLOUDFLARE_ACCOUNT_ID` | `3402daeab80cd7951bdafea3a9c0217f` |
+
+## GitHub 仓库
+
+https://github.com/GJFKU/yu

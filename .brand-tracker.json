@@ -2,7 +2,7 @@
   "brands": [
     {"name": "小米", "done": true},
     {"name": "漫步者", "done": true},
-    {"name": "OPPO/一加", "done": false},
+    {"name": "OPPO/一加", "done": true},
     {"name": "索尼", "done": false},
     {"name": "Bose", "done": false},
     {"name": "韶音", "done": false},

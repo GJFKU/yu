@@ -1,6 +1,6 @@
 {
   "brands": [
-    {"name": "小米", "done": false},
+    {"name": "小米", "done": true},
     {"name": "漫步者", "done": false},
     {"name": "OPPO/一加", "done": false},
     {"name": "索尼", "done": false},

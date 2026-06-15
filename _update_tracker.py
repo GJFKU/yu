@@ -1,21 +1,17 @@
 import json
 
-with open(r'C:\Users\yu\Desktop\earbuds-review\.brand-tracker.json', 'r') as f:
+path = r'C:\Users\yu\Desktop\earbuds-review\.brand-tracker.json'
+with open(path) as f:
     data = json.load(f)
 
-# Mark 韶音 as done (article already exists)
-for brand in data['brands']:
-    if brand['name'] == '韶音':
-        brand['done'] = True
-        break
-
-# Show next undone brand
 for b in data['brands']:
-    if not b['done']:
-        print(f'Next brand: {b["name"]}')
+    if b['name'] == 'Beats':
+        b['done'] = True
+        print(f'Marked {b["name"]} as done')
         break
 
-with open(r'C:\Users\yu\Desktop\earbuds-review\.brand-tracker.json', 'w') as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
+with open(path, 'w') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
 
-print('Tracker updated - 韶音 marked as done')
+print('Tracker updated.')
+print(f'Remaining undone: {sum(1 for b in data["brands"] if not b["done"])}')

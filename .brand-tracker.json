@@ -19,7 +19,7 @@
     { "name": "倍思", "done": true },
     { "name": "塞那", "done": true },
     { "name": "科大讯飞", "done": true },
-    { "name": "Nothing/CMF", "done": false },
+    { "name": "Nothing/CMF", "done": true },
     { "name": "IKF", "done": false },
     { "name": "Linklike", "done": false },
     { "name": "击音", "done": false },

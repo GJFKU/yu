@@ -1,22 +1,12 @@
 import json
-
-with open('.brand-tracker.json', 'r') as f:
-    tracker = json.load(f)
-
-# Mark Beats as done
-for brand in tracker['brands']:
-    if brand['name'] == 'Beats':
-        brand['done'] = True
-        print(f'Marked {brand["name"]} as done')
+path = r'C:\Users\yu\Desktop\earbuds-review\.brand-tracker.json'
+with open(path, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+for b in data['brands']:
+    if b['name'] == '粤声':
+        b['done'] = True
+        print('Marked 粤声 as done')
         break
-
-with open('.brand-tracker.json', 'w') as f:
-    json.dump(tracker, f, ensure_ascii=False, indent=2)
-
-# Show next undone
-for brand in tracker['brands']:
-    if not brand['done']:
-        print(f'Next brand: {brand["name"]}')
-        break
-else:
-    print('ALL DONE')
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+print('Tracker updated')

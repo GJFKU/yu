@@ -1,140 +1,38 @@
 {
   "brands": [
-    {
-      "name": "小米",
-      "done": true
-    },
-    {
-      "name": "漫步者",
-      "done": true
-    },
-    {
-      "name": "OPPO/一加",
-      "done": true
-    },
-    {
-      "name": "索尼",
-      "done": true
-    },
-    {
-      "name": "Bose",
-      "done": true
-    },
-    {
-      "name": "韶音",
-      "done": true
-    },
-    {
-      "name": "JBL",
-      "done": true
-    },
-    {
-      "name": "Beats",
-      "done": true
-    },
-    {
-      "name": "三星",
-      "done": true
-    },
-    {
-      "name": "QCY",
-      "done": true
-    },
-    {
-      "name": "FIIL",
-      "done": true
-    },
-    {
-      "name": "HIFIMAN",
-      "done": true
-    },
-    {
-      "name": "水月雨",
-      "done": true
-    },
-    {
-      "name": "SoundPEATS",
-      "done": true
-    },
-    {
-      "name": "飞傲",
-      "done": true
-    },
-    {
-      "name": "万魔",
-      "done": true
-    },
-    {
-      "name": "倍思",
-      "done": true
-    },
-    {
-      "name": "塞那",
-      "done": true
-    },
-    {
-      "name": "科大讯飞",
-      "done": true
-    },
-    {
-      "name": "Nothing/CMF",
-      "done": true
-    },
-    {
-      "name": "IKF",
-      "done": true
-    },
-    {
-      "name": "Linklike",
-      "done": true
-    },
-    {
-      "name": "击音",
-      "done": true
-    },
-    {
-      "name": "金运",
-      "done": true
-    },
-    {
-      "name": "DALI/达尼",
-      "done": true
-    },
-    {
-      "name": "QoA",
-      "done": true
-    },
-    {
-      "name": "粤声",
-      "done": true
-    },
-    {
-      "name": "丽弦",
-      "done": true
-    },
-    {
-      "name": "原道",
-      "done": true
-    },
-    {
-      "name": "瓷音未来",
-      "done": true
-    },
-    {
-      "name": "MORROR ART",
-      "done": true
-    },
-    {
-      "name": "虹觅",
-      "done": false
-    },
-    {
-      "name": "Newyu",
-      "done": false
-    },
-    {
-      "name": "渡哲特",
-      "done": false
-    }
+    { "name": "小米", "done": true },
+    { "name": "漫步者", "done": true },
+    { "name": "OPPO/一加", "done": true },
+    { "name": "索尼", "done": true },
+    { "name": "Bose", "done": true },
+    { "name": "韶音", "done": true },
+    { "name": "JBL", "done": true },
+    { "name": "Beats", "done": true },
+    { "name": "三星", "done": true },
+    { "name": "QCY", "done": true },
+    { "name": "FIIL", "done": true },
+    { "name": "HIFIMAN", "done": true },
+    { "name": "水月雨", "done": true },
+    { "name": "SoundPEATS", "done": true },
+    { "name": "飞傲", "done": true },
+    { "name": "万魔", "done": true },
+    { "name": "倍思", "done": true },
+    { "name": "塞那", "done": true },
+    { "name": "科大讯飞", "done": true },
+    { "name": "Nothing/CMF", "done": true },
+    { "name": "IKF", "done": true },
+    { "name": "Linklike", "done": true },
+    { "name": "击音", "done": true },
+    { "name": "金运", "done": true },
+    { "name": "DALI/达尼", "done": true },
+    { "name": "QoA", "done": true },
+    { "name": "粤声", "done": true },
+    { "name": "丽弦", "done": true },
+    { "name": "原道", "done": true },
+    { "name": "瓷音未来", "done": true },
+    { "name": "MORROR ART", "done": true },
+    { "name": "虹觅", "done": true },
+    { "name": "Newyu", "done": false },
+    { "name": "渡哲特", "done": false }
   ]
 }

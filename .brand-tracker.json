@@ -1,5 +1,6 @@
 {
   "brands": [
+    { "name": "Apple/苹果", "done": true },
     { "name": "小米", "done": true },
     { "name": "漫步者", "done": true },
     { "name": "OPPO/一加", "done": true },
